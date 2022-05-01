@@ -1,0 +1,134 @@
+input {
+    box-shadow: none;
+    color: $color_stack_2;
+    box-shadow: none !important;
+
+    &.form-control {
+        height: unset;
+        padding: 0.5rem 1rem;
+    }
+
+    &:focus,
+    &:active {
+        border-color: $color_stack_2;
+        box-shadow: none;
+    }
+
+    &:read-only {
+        background-color: transparent !important;
+    }
+}
+
+select {
+    height: unset;
+    padding: 0.75rem 1rem;
+    box-shadow: none;
+
+    &:focus {
+        border-color: $color_stack_2;
+    }
+}
+
+textarea {
+    resize: none;
+    padding: 0.75rem 1rem;
+
+    &:focus {
+        box-shadow: none;
+        border-color: $color_stack_2;
+    }
+}
+
+form.floating-form {
+    .notes {
+        color: $color_stack_5;
+        margin-top: -1rem;
+    }
+
+    input,
+    textarea {
+        @include font($font_stack_1, $font_size_6, $color_stack_3);
+        border-radius: 0;
+        border: none;
+        border-bottom: 2px solid $color_stack_5;
+        box-shadow: none !important;
+        outline: none !important;
+        background-color: transparent !important;
+        resize: none;
+        padding: 0 0 0.75rem;
+    }
+
+
+    .form-group {
+        align-self: stretch;
+        position: relative;
+        margin: 1.5rem 0;
+
+        input:not([disabled]):focus~.placeholder,
+        &.hasValue input:not([disabled])~.placeholder {
+            font-size: $font_size_8;
+            top: 0;
+            transform: translateY(-100%);
+        }
+
+        textarea:not([disabled]):focus~.placeholder,
+        &.hasValue textarea:not([disabled])~.placeholder {
+            font-size: $font_size_8;
+            top: 0;
+            transform: translateY(-100%);
+        }
+
+        input:not([disabled]),
+        textarea:not([disabled]) {
+            &:focus {
+                border-color: $color_stack_4;
+                color: $color_stack_3;
+            }
+
+            &:focus~.placeholder {
+                color: $color_stack_4;
+            }
+        }
+
+        &.error {
+
+            input,
+            textarea {
+                border-color: $color_danger;
+
+                &:focus {
+                    border-color: $color_danger;
+                }
+
+                &:focus~.placeholder {
+                    color: $color_danger;
+                }
+            }
+        }
+
+        .placeholder {
+            font-size: $font_size_6;
+            cursor: text;
+            color: $color_stack_5;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-75%);
+            box-sizing: border-box;
+            transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            width: 100%;
+            padding: 0 0 0.125rem;
+            user-select: none;
+
+            span {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .validation {
+        background-color: $color_danger;
+        color: $color_stack_3;
+        padding: 0.75rem 1rem;
+    }
+}

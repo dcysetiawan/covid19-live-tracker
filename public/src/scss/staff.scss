@@ -1,0 +1,324 @@
+@import "base/fonts";
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/extends";
+@import "modules/elements";
+@import "modules/forms";
+@import "modules/buttons";
+@import "modules/datatables";
+
+#custom-nav {
+    @include flex(row, center);
+    height: 4rem;
+    background-color: $color_stack_3;
+    color: $color_stack_2;
+    font-size: $font_size_5;
+    z-index: 10;
+    box-shadow: 0px 0px 30px 0px $shadow_stack_1;
+
+    .custom-nav-item-group {
+        @include flex(row, center);
+        align-self: stretch;
+    }
+
+    .custom-nav-item {
+        @include flex(row, center, center);
+        align-self: stretch;
+        padding: 0.675rem 1.375rem;
+        cursor: pointer;
+        user-select: none;
+        border: none;
+        outline: none !important;
+        background-color: transparent;
+
+        @media #{$max_small} {
+            padding: 0.675rem 1.25rem;
+        }
+
+        &:hover {
+            background-color: $shadow_stack_1;
+            color: $color_stack_1;
+
+            span {
+                color: $color_stack_1;
+            }
+        }
+    }
+
+    .toggle-sidebar button {
+        border: none;
+        outline: none !important;
+        background-color: transparent;
+
+        span {
+            font-size: $font_size_5;
+            color: $color_stack_2;
+            margin: none;
+        }
+    }
+}
+
+#drop-shadow {
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #707070bb;
+    transition: all 0.5s ease-in-out;
+}
+
+#sidebar {
+    position: fixed;
+    background-color: $color_stack_3;
+    padding: 0 0 16px;
+    height: 100%;
+    width: 250px; // important
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    white-space: nowrap;
+    color: $color_stack_2;
+    font-size: 1rem;
+    box-shadow: 0px 0px 30px 0px $shadow_stack_1;
+
+    @media #{$max_small} {
+        width: 0; // important
+        z-index: 999;
+
+        ul>li>a {
+            .icon {
+                margin-right: 20px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+
+            .text {
+                display: none;
+            }
+        }
+    }
+
+    .menu-divider {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $shadow_stack_1;
+    }
+
+    &.mini {
+        width: 58px;
+
+        @media #{$max_small} {
+            width: 0;
+        }
+
+        .title {
+            padding: 16px 14px;
+
+            .title-icon {
+                display: unset;
+                margin-right: 0;
+            }
+
+            .title-text {
+                display: none;
+            }
+        }
+
+        .toggle-sidebar .icon {
+            transform: scaleX(-1);
+        }
+
+        ul>li>a {
+            .icon {
+                margin-right: 20px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+
+            .text {
+                text-indent: -999px;
+            }
+        }
+    }
+
+    &.expand {
+        width: 250px;
+
+        .title {
+            padding: 16px 20px;
+
+            .title-icon {
+                display: none;
+                margin-right: 18px;
+            }
+
+            .title-text {
+                display: unset;
+            }
+        }
+
+        ul>li>a {
+            .icon {
+                margin-right: 18px;
+            }
+
+            .text {
+                text-indent: 0;
+            }
+        }
+
+    }
+
+    .title {
+        @include flex(row, center, center);
+        height: 4rem;
+        padding: 0 20px;
+
+        .title-text {
+            @include font($font_stack_1, 1.25rem, $color_stack_1);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .title-icon {
+            display: none;
+            margin-right: 18px;
+        }
+    }
+
+    .wrapper {
+        margin: 2.5rem 0;
+
+        @media #{$max_large} {
+            margin: 2rem 0;
+        }
+
+        @media #{$max_small} {
+            margin: 1.5rem 0;
+        }
+
+        @media #{$max_extra_small} {
+            margin: 1rem 0;
+        }
+    }
+
+    ul {
+        display: block;
+        padding: 0;
+
+        >li {
+            list-style: none;
+            transition: 0.25s !important;
+            position: relative;
+
+            &.active {
+                >a {
+                    background-color: $color_stack_5;
+                    color: $color_stack_1;
+
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 4px;
+                    background-color: $color_stack_1;
+                }
+            }
+
+            &:hover {
+                >a {
+                    background-color: $color_stack_5;
+                    color: $color_stack_1;
+                }
+
+                text-decoration: none;
+            }
+
+            a {
+                @include flex(row, center);
+                padding: 12px 20px;
+                color: $color_stack_2;
+                text-decoration: none;
+
+                .icon {
+                    vertical-align: middle;
+                    margin-right: 18px;
+                    font-size: 18px;
+                    color: $color_stack_1;
+                }
+
+                .text {
+                    transition: text-indent 0.3s ease;
+                }
+            }
+        }
+    }
+}
+
+#main-content {
+    transition: margin-left 0.5s;
+    margin-left: 250px; // important
+    min-height: 100%;
+    z-index: 1;
+
+    @media #{$max_small} {
+        margin-left: 0; // important
+    }
+
+
+    &.mini {
+        margin-left: 250px; // important
+    }
+
+    &.expand {
+        margin-left: 58px; // important
+
+        @media #{$max_small} {
+            margin-left: 0; // important
+        }
+    }
+
+    #content-wrapper {
+        margin: 2.5rem;
+
+        @media #{$max_large} {
+            margin: 2rem;
+        }
+
+        @media #{$max_small} {
+            margin: 1.5rem;
+        }
+
+        @media #{$max_extra_small} {
+            margin: 1rem;
+        }
+    }
+}
+
+.registration-wrapper {
+    background-color: $color_stack_3;
+    padding: 3rem 2rem;
+    box-shadow: 0 0 12px $shadow_stack_1;
+    border-radius: 4px;
+
+    table {
+        tbody {
+
+            th,
+            td {
+                text-transform: none !important;
+            }
+        }
+    }
+}

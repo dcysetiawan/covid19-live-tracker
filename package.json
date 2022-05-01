@@ -1,0 +1,29 @@
+{
+  "name": "covid19-live-tracker",
+  "version": "1.0.0",
+  "description": "Covid-19 Live Tracker for Sevima Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Dicky Setiawan",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.6",
+    "express-session": "^1.17.2",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1"
+  }
+}

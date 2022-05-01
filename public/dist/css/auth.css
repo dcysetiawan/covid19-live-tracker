@@ -1,0 +1,590 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap");
+/* Elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* ::-moz-selection {
+  background-color: #091a50;
+  color: #FFFFFF;
+}
+
+* ::selection {
+  background-color: #091a50;
+  color: #FFFFFF;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #595c5c;
+  line-height: 1.6rem;
+  background-color: #f2f5ff;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #595c5c;
+  line-height: 1.6rem;
+}
+
+a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: #091a50;
+}
+
+a:hover {
+  color: #091a50;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: #2b2b2b;
+  line-height: 2.6rem;
+  text-transform: uppercase;
+}
+
+.text-primary {
+  color: #091a50 !important;
+}
+
+.scroll-to-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: #EB0065;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 99999;
+  display: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.scroll-to-top:hover {
+  background-color: #ff1579;
+}
+
+.scroll-to-top .material-icons {
+  color: #FFFFFF;
+  font-size: 1.75rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+input {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #2b2b2b;
+  box-shadow: none !important;
+}
+
+input.form-control {
+  height: unset;
+  padding: 0.5rem 1rem;
+}
+
+input:focus, input:active {
+  border-color: #2b2b2b;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input:-moz-read-only {
+  background-color: transparent !important;
+}
+
+input:read-only {
+  background-color: transparent !important;
+}
+
+select {
+  height: unset;
+  padding: 0.75rem 1rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+select:focus {
+  border-color: #2b2b2b;
+}
+
+textarea {
+  resize: none;
+  padding: 0.75rem 1rem;
+}
+
+textarea:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #2b2b2b;
+}
+
+form.floating-form .notes {
+  color: #c0c6da;
+  margin-top: -1rem;
+}
+
+form.floating-form input,
+form.floating-form textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF;
+  line-height: 1.6rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #c0c6da;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+  resize: none;
+  padding: 0 0 0.75rem;
+}
+
+form.floating-form .form-group {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+form.floating-form .form-group input:not([disabled]):focus ~ .placeholder,
+form.floating-form .form-group.hasValue input:not([disabled]) ~ .placeholder {
+  font-size: 0.75rem;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+form.floating-form .form-group textarea:not([disabled]):focus ~ .placeholder,
+form.floating-form .form-group.hasValue textarea:not([disabled]) ~ .placeholder {
+  font-size: 0.75rem;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+form.floating-form .form-group input:not([disabled]):focus,
+form.floating-form .form-group textarea:not([disabled]):focus {
+  border-color: #EB0065;
+  color: #FFFFFF;
+}
+
+form.floating-form .form-group input:not([disabled]):focus ~ .placeholder,
+form.floating-form .form-group textarea:not([disabled]):focus ~ .placeholder {
+  color: #EB0065;
+}
+
+form.floating-form .form-group.error input,
+form.floating-form .form-group.error textarea {
+  border-color: #dc3545;
+}
+
+form.floating-form .form-group.error input:focus,
+form.floating-form .form-group.error textarea:focus {
+  border-color: #dc3545;
+}
+
+form.floating-form .form-group.error input:focus ~ .placeholder,
+form.floating-form .form-group.error textarea:focus ~ .placeholder {
+  color: #dc3545;
+}
+
+form.floating-form .form-group .placeholder {
+  font-size: 1rem;
+  cursor: text;
+  color: #c0c6da;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  width: 100%;
+  padding: 0 0 0.125rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+form.floating-form .form-group .placeholder span {
+  background-color: transparent;
+}
+
+form.floating-form .validation {
+  background-color: #dc3545;
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+}
+
+button {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+button:focus, button:hover {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 8px 32px;
+  border-radius: 2px;
+}
+
+.btn.btn-primary {
+  background-color: #EB0065;
+  border: 1px solid #EB0065;
+  color: #f2f5ff;
+}
+
+.btn.btn-primary:hover {
+  background-color: #ff1579;
+  border-color: #ff1579;
+  color: #FFFFFF;
+}
+
+.btn.btn-primary:focus, .btn.btn-primary:active {
+  background-color: #EB0065;
+  border-color: #EB0065;
+  color: #FFFFFF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#auth-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #2b2b2b;
+  line-height: 1.6rem;
+  padding: 1rem 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f2f5ff;
+}
+
+@media only screen and (max-width: 767px) {
+  #auth-page {
+    background-color: #FFFFFF;
+  }
+}
+
+#auth-page .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  border-top: 5px solid #091a50;
+  padding: 5rem 3rem 4rem;
+  -webkit-box-shadow: 0px 0px 30px 0px #42424215;
+          box-shadow: 0px 0px 30px 0px #42424215;
+}
+
+@media only screen and (max-width: 767px) {
+  #auth-page .card {
+    margin-top: 0 !important;
+    padding: 3rem 2rem 2rem;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: none;
+  }
+}
+
+#auth-page .card form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+#auth-page .card form input,
+#auth-page .card form textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #2b2b2b;
+  line-height: 1.6rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #595c5c;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+  resize: none;
+  padding: 0 0 0.75rem;
+}
+
+#auth-page .card form .form-group {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+#auth-page .card form .form-group input:not([disabled]):focus ~ .placeholder,
+#auth-page .card form .form-group.hasValue input:not([disabled]) ~ .placeholder {
+  font-size: 0.75rem;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+#auth-page .card form .form-group textarea:not([disabled]):focus ~ .placeholder,
+#auth-page .card form .form-group.hasValue textarea:not([disabled]) ~ .placeholder {
+  font-size: 0.75rem;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+#auth-page .card form .form-group input:not([disabled]):focus,
+#auth-page .card form .form-group textarea:not([disabled]):focus {
+  border-color: #EB0065;
+  color: #2b2b2b;
+}
+
+#auth-page .card form .form-group input:not([disabled]):focus ~ .placeholder,
+#auth-page .card form .form-group textarea:not([disabled]):focus ~ .placeholder {
+  color: #091a50;
+}
+
+#auth-page .card form .form-group.error input,
+#auth-page .card form .form-group.error textarea {
+  border-color: #dc3545;
+}
+
+#auth-page .card form .form-group.error input:focus,
+#auth-page .card form .form-group.error textarea:focus {
+  border-color: #dc3545;
+}
+
+#auth-page .card form .form-group.error input:focus ~ .placeholder,
+#auth-page .card form .form-group.error textarea:focus ~ .placeholder {
+  color: #dc3545;
+}
+
+#auth-page .card form .form-group .placeholder {
+  font-size: 1rem;
+  cursor: text;
+  color: #595c5c;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  width: 100%;
+  padding: 0 0 0.125rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#auth-page .card form .form-group .placeholder span {
+  background-color: transparent;
+}
+
+#auth-page .card form #username-validation,
+#auth-page .card form #password-validation,
+#auth-page .card form #validation {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  color: #dc3545;
+  line-height: 1.2rem;
+}
+
+#auth-page .card form .form-group input:not([disabled]):focus ~ .placeholder,
+#auth-page .card form .form-group.hasValue input:not([disabled]) ~ .placeholder {
+  font-size: 0.675rem;
+  top: 0;
+}
+
+#auth-page .card form .form-group input:not([disabled]):focus {
+  border-bottom: 2px solid #091a50;
+}
+
+#auth-page .card form .form-group input:not([disabled]):focus ~ .placeholder {
+  color: #091a50;
+}
+
+#auth-page .card form .form-group .placeholder {
+  font-size: 1rem;
+  cursor: text;
+  color: #595c5c;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#auth-page .card form .form-group .placeholder span {
+  background-color: transparent;
+  padding: 0 0.075rem;
+}
+
+#auth-page .card form button {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  line-height: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 0.375rem 1.75rem;
+  background-color: #091a50;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#auth-page .card form button#back-to-username {
+  background-color: #c0c6da;
+  color: #091a50;
+}
+
+#auth-page .card form button#back-to-username:hover {
+  background-color: #091a50;
+  color: #FFFFFF;
+}
+
+#auth-page .card form button#back-to-username:focus, #auth-page .card form button#back-to-username:active {
+  background-color: #091a50;
+  color: #FFFFFF;
+  border: none;
+}
+
+#auth-page .card form button:hover {
+  background-color: #0d2675;
+  border: none;
+  color: #FFFFFF;
+}
+
+#auth-page .card form button:focus, #auth-page .card form button:active {
+  background-color: #0d2675;
+  border: none;
+  color: #FFFFFF;
+}
+
+#auth-page .card form button.processing {
+  background-color: #c0c6da;
+  color: #091a50;
+  cursor: not-allowed;
+}
+
+#auth-page .card form button.processing .spinner-border {
+  display: unset;
+}
+
+#auth-page .card form button .spinner-border {
+  margin-left: 0.75rem;
+  display: none;
+}
+
+#auth-page .card form button .spinner-border.spinner-border-sm {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+/*# sourceMappingURL=auth.css.map */

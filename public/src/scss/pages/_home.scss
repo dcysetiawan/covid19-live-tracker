@@ -1,0 +1,231 @@
+#hero {
+    @include flex(column, center, center);
+    background-color: $color_stack_1;
+    padding-top: 4rem;
+    min-height: 100vh;
+
+    @media #{$max_medium} {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .hero-title {
+        @include font($font_stack_1, $font_size_3, $color_stack_3, true);
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+
+        @media #{$max_medium} {
+            text-align: center;
+        }
+    }
+
+    .hero-description {
+        @include font($font_stack_1, $font_size_6, $color_stack_5);
+        margin-bottom: 4rem;
+
+        @media #{$max_medium} {
+            text-align: center;
+        }
+    }
+
+    .hero-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        margin-bottom: 0.75rem;
+
+        @media #{$max_medium} {
+            width: 100%;
+        }
+    }
+}
+
+#stats {
+    background-color: $color_stack_1;
+    position: relative;
+    top: -1px;
+    padding: 4rem 0 6rem;
+
+    @media #{$max_medium} {
+        padding: 4rem 1rem;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        background-color: $color_stack_6;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 50%;
+        z-index: 0;
+    }
+
+    * {
+        z-index: 10;
+    }
+
+    .stats-wrapper {
+        background-color: $color_stack_3;
+        padding: 3rem 2rem;
+        box-shadow: 0 0 12px $shadow_stack_1;
+        border-radius: 4px;
+
+        .stats-item {
+            img {
+                opacity: 0.5;
+            }
+
+            .title {
+                @include font($font-stack-1, $font_size_7, $color_stack_8);
+                text-align: left;
+                margin-bottom: 0.25rem;
+
+                @media #{$max_small} {
+                    text-align: center;
+                }
+            }
+
+            .content {
+                @include font($font-stack-1, $font_size_4, $color_stack_2);
+                font-weight: 500;
+                text-align: left;
+
+                @media #{$max_small} {
+                    text-align: center;
+                }
+            }
+
+            &.select {
+                .title {
+                    padding-left: 0.5rem;
+                }
+
+                .content {
+                    @include font($font-stack-1, $font_size_6, $color_stack_2);
+                    font-weight: 600;
+                    text-align: left;
+
+                    select {
+                        border: none;
+                        padding-left: 0.5rem;
+                        box-shadow: none;
+
+                        @media #{$max_medium} {
+                            text-align: center;
+                            text-align-last: center;
+                            padding-right: 0.5rem;
+                        }
+
+                        option {
+                            padding: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#prevention {
+    position: relative;
+    padding: 4rem 0 6rem;
+
+    .prevention-wrapper {
+        @include flex(column, center, flex-start);
+        background-color: $color_stack_3;
+        height: 100%;
+        padding: 3rem 2rem 2.5rem;
+        box-shadow: 0 0 12px $shadow_stack_1;
+        border-radius: 4px;
+
+        .prevention-img {
+            max-width: 40%;
+            height: auto;
+            margin-bottom: 3rem
+        }
+
+        .prevention-title {
+            @include font($font_stack_1, $font_size_5, $color_stack_1, true);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .prevention-desc {
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+}
+
+#hospitals {
+    position: relative;
+    padding: 4rem 0 6rem;
+
+    .hospitals-wrapper {
+        background-color: $color_stack_3;
+        padding: 3rem 2rem;
+        box-shadow: 0 0 12px $shadow_stack_1;
+        border-radius: 4px;
+    }
+}
+
+#registration {
+    background-color: $color_stack_1;
+    position: relative;
+    padding: 4rem 0 6rem;
+
+    .total-vaccination {
+        margin-top: 1rem;
+        color: $color_stack_5;
+
+        span {
+            font-size: $font_size_5;
+            color: $color_stack_4;
+        }
+    }
+
+    .section-title {
+        color: $color_stack_3;
+    }
+}
+
+#donation {
+    // background-color: $color_stack_3;
+    position: relative;
+    padding: 4rem 0 6rem;
+
+    .donation-title {
+        @include font($font_stack_1, $font_size_3, $color_stack_4, true);
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+
+        @media #{$max_medium} {
+            text-align: center;
+        }
+    }
+
+    .donation-description {
+        @include font($font_stack_1, $font_size_6, $color_stack_8);
+        margin-bottom: 4rem;
+
+        @media #{$max_medium} {
+            text-align: center;
+        }
+    }
+
+    .donation-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        margin-bottom: 0.75rem;
+
+        @media #{$max_medium} {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+footer {
+    background-color: $color_stack_1;
+    color: $color_stack_3;
+    padding: 2rem 0;
+
+    a {
+        font-family: inherit;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: $color_stack_4;
+        }
+    }
+}

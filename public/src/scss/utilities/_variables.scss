@@ -1,0 +1,41 @@
+$font-stack-1: 'Poppins',
+sans-serif;
+$font-stack-2: 'Playfair Display',
+serif;
+
+$color_stack_1:#091a50;
+$color_stack_2:#2b2b2b;
+$color_stack_3:#FFFFFF;
+$color_stack_4:#EB0065;
+$color_stack_5:#c0c6da;
+$color_stack_6:#f2f5ff;
+$color_stack_7:#314e52;
+$color_stack_8:#595c5c;
+$color_stack_9:#8a8a8a;
+
+$shadow_stack_1:#42424215;
+$shadow_stack_2:#1688a725;
+
+$font_size_1: 3rem;
+$font_size_2: 2.5rem;
+$font_size_3: 2rem;
+$font_size_4: 1.5rem;
+$font_size_5: 1.25rem;
+$font_size_6: 1rem;
+$font_size_7: 0.875rem;
+$font_size_8: 0.75rem;
+
+$color_success:#28a745;
+$color_danger:#dc3545;
+$color_warning:#ffc107;
+
+$extra_large_screen: 'only screen and (min-width: 1200px) and (max-width: 1440px)';
+$large_screen: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$medium_screen: 'only screen and (min-width: 768px) and (max-width: 991px)';
+$small_screen: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$extra_small_screen: 'only screen and (min-width: 421px) and (max-width: 575px)';
+$max_large: 'only screen and (max-width: 1199px)';
+$min_large: 'only screen and (min-width: 992px)';
+$max_medium: 'only screen and (max-width: 991px)';
+$max_small: 'only screen and (max-width: 767px)';
+$max_extra_small: 'only screen and (max-width: 575px)';

@@ -1,0 +1,221 @@
+@import "base/fonts";
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/extends";
+@import "modules/elements";
+@import "modules/forms";
+@import "modules/buttons";
+
+#auth-page {
+    @include flex(row, flex-start, center);
+    @include font($font_stack_1, $font_size_6, $color_stack_2);
+    padding: 1rem 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $color_stack_6;
+
+    @media #{$max_small} {
+        background-color: $color_stack_3;
+    }
+
+    .card {
+        @include flex(column, stretch, center);
+        border: none;
+        border-top: 5px solid $color_stack_1;
+        padding: 5rem 3rem 4rem;
+        box-shadow: 0px 0px 30px 0px $shadow_stack_1;
+
+        @media #{$max_small} {
+            margin-top: 0 !important;
+            padding: 3rem 2rem 2rem;
+            box-shadow: none;
+            border: none;
+        }
+
+        form {
+            @include flex(column, flex-start, flex-start);
+            width: 100%;
+
+            input,
+            textarea {
+                @include font($font_stack_1, $font_size_6, $color_stack_2);
+                border-radius: 0;
+                border: none;
+                border-bottom: 2px solid $color_stack_8;
+                box-shadow: none !important;
+                outline: none !important;
+                background-color: transparent !important;
+                resize: none;
+                padding: 0 0 0.75rem;
+            }
+
+
+            .form-group {
+                align-self: stretch;
+                position: relative;
+                margin: 1.5rem 0;
+
+                input:not([disabled]):focus~.placeholder,
+                &.hasValue input:not([disabled])~.placeholder {
+                    font-size: $font_size_8;
+                    top: 0;
+                    transform: translateY(-100%);
+                }
+
+                textarea:not([disabled]):focus~.placeholder,
+                &.hasValue textarea:not([disabled])~.placeholder {
+                    font-size: $font_size_8;
+                    top: 0;
+                    transform: translateY(-100%);
+                }
+
+                input:not([disabled]),
+                textarea:not([disabled]) {
+                    &:focus {
+                        border-color: $color_stack_4;
+                        color: $color_stack_2;
+                    }
+
+                    &:focus~.placeholder {
+                        color: $color_stack_1;
+                    }
+                }
+
+                &.error {
+
+                    input,
+                    textarea {
+                        border-color: $color_danger;
+
+                        &:focus {
+                            border-color: $color_danger;
+                        }
+
+                        &:focus~.placeholder {
+                            color: $color_danger;
+                        }
+                    }
+                }
+
+                .placeholder {
+                    font-size: $font_size_6;
+                    cursor: text;
+                    color: $color_stack_8;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-75%);
+                    box-sizing: border-box;
+                    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                    text-align: left;
+                    width: 100%;
+                    padding: 0 0 0.125rem;
+                    user-select: none;
+
+                    span {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            #username-validation,
+            #password-validation,
+            #validation {
+                @include font($font_stack_1, $font_size_8, $color_danger);
+            }
+
+            .form-group input:not([disabled]):focus~.placeholder,
+            .form-group.hasValue input:not([disabled])~.placeholder {
+                font-size: 0.675rem;
+                top: 0;
+            }
+
+            .form-group input:not([disabled]):focus {
+                border-bottom: 2px solid $color_stack_1;
+            }
+
+            .form-group input:not([disabled]):focus~.placeholder {
+                color: $color_stack_1;
+            }
+
+            .form-group .placeholder {
+                font-size: $font_size_6;
+                cursor: text;
+                color: $color_stack_8;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                box-sizing: border-box;
+                transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                text-align: left;
+                width: 100%;
+                padding: 0;
+                user-select: none;
+            }
+
+            .form-group .placeholder span {
+                background-color: transparent;
+                padding: 0 0.075rem;
+            }
+
+            button {
+                @include font($font_stack_1, $font_size_7, $color_stack_3);
+                @include flex(row, center, center);
+                border: none;
+                align-self: flex-end;
+                padding: 0.375rem 1.75rem;
+                background-color: $color_stack_1;
+                box-shadow: none;
+
+                &#back-to-username {
+                    background-color: $color_stack_5;
+                    color: $color_stack_1;
+
+                    &:hover {
+                        background-color: $color_stack_1;
+                        color: $color_stack_3;
+                    }
+
+                    &:focus,
+                    &:active {
+                        background-color: $color_stack_1;
+                        color: $color_stack_3;
+                        border: none;
+                    }
+                }
+
+                &:hover {
+                    background-color: lighten($color_stack_1, 8%);
+                    border: none;
+                    color: $color_stack_3;
+                }
+
+                &:focus,
+                &:active {
+                    background-color: lighten($color_stack_1, 8%);
+                    border: none;
+                    color: $color_stack_3;
+                }
+
+                &.processing {
+                    background-color: $color_stack_5;
+                    color: $color_stack_1;
+                    cursor: not-allowed;
+
+                    .spinner-border {
+                        display: unset;
+                    }
+                }
+
+                .spinner-border {
+                    margin-left: 0.75rem;
+                    display: none;
+
+                    &.spinner-border-sm {
+                        width: 0.75rem;
+                        height: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}

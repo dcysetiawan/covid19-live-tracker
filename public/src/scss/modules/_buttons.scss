@@ -1,0 +1,37 @@
+button {
+    transition: all 0.3s ease 0s;
+
+    &:focus,
+    &:hover {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.btn {
+    font-family: $font-stack-1;
+    font-size: $font_size_6;
+    padding: 8px 32px;
+    border-radius: 2px;
+
+    &.btn-primary {
+        background-color: $color_stack_4;
+        border: 1px solid $color_stack_4;
+        color: $color_stack_6;
+
+        &:hover {
+            background-color: lighten($color_stack_4, 8%);
+            border-color: lighten($color_stack_4, 8%);
+            color: $color_stack_3;
+        }
+
+        &:focus,
+        &:active {
+            background-color: $color_stack_4;
+            border-color: $color_stack_4;
+            color: $color_stack_3;
+            box-shadow: none;
+            // box-shadow: 0 0 0 0.25rem lighten($color_stack_4, 32%);
+        }
+    }
+}
