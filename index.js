@@ -8,6 +8,8 @@ const express = require('express'),
     MySQLStore = require('express-mysql-session')(session),
     cors = require('cors');
 
+
+
 app.use(cors())
 
 // Save all secret to .env
